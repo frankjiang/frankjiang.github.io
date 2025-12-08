@@ -1,0 +1,481 @@
+:root {
+    --bg-dark: #0a0a0c;
+    --text-main: #ffffff;
+    --text-muted: #a0a0b0;
+    --accent-primary: #7000ff; /* 赛博紫 */
+    --accent-secondary: #00f0ff; /* 霓虹蓝 */
+    --glass-bg: rgba(20, 20, 25, 0.6);
+    --glass-border: rgba(255, 255, 255, 0.08);
+    --card-hover: rgba(255, 255, 255, 0.05);
+    
+    --font-heading: 'Space Grotesk', sans-serif;
+    --font-body: 'Inter', sans-serif;
+    --font-serif: 'Cinzel', serif;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    font-family: var(--font-body);
+    line-height: 1.7;
+    overflow-x: hidden;
+    min-height: 100vh;
+}
+
+/* --- 动态背景 --- */
+.ambient-light {
+    position: fixed;
+    border-radius: 50%;
+    filter: blur(120px);
+    z-index: -2;
+    opacity: 0.6;
+    animation: float 10s infinite ease-in-out;
+}
+
+.ambient-light.one {
+    top: -10%;
+    left: -10%;
+    width: 50vw;
+    height: 50vw;
+    background: radial-gradient(circle, var(--accent-primary), transparent);
+}
+
+.ambient-light.two {
+    bottom: -10%;
+    right: -10%;
+    width: 60vw;
+    height: 60vw;
+    background: radial-gradient(circle, #2d005f, transparent);
+    animation-delay: -5s;
+}
+
+.grid-overlay {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-image: 
+        linear-gradient(var(--glass-border) 1px, transparent 1px),
+        linear-gradient(90deg, var(--glass-border) 1px, transparent 1px);
+    background-size: 50px 50px;
+    z-index: -1;
+    opacity: 0.15;
+    mask-image: radial-gradient(circle at center, black 40%, transparent 100%);
+}
+
+@keyframes float {
+    0%, 100% { transform: translate(0, 0); }
+    50% { transform: translate(30px, 50px); }
+}
+
+/* --- 布局 --- */
+.main-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    display: grid;
+    grid-template-columns: 320px 1fr;
+    gap: 2rem;
+}
+
+@media (max-width: 850px) {
+    .main-container { grid-template-columns: 1fr; }
+}
+
+/* --- 毛玻璃通用样式 --- */
+.glass {
+    background: var(--glass-bg);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+}
+
+.glass-panel {
+    background: rgba(15, 15, 20, 0.4);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--glass-border);
+    border-radius: 16px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.glass-panel:hover {
+    border-color: rgba(112, 0, 255, 0.3);
+}
+
+.glass-panel a {
+    color: var(--accent-secondary); /* #00f0ff 霓虹蓝 */
+    font-weight: 700;
+    text-shadow: 0 0 10px rgba(0, 240, 255, 0.3); /* 柔和的光晕 */
+    letter-spacing: 0.5px;
+}
+
+/* --- 侧边栏 --- */
+.profile-card {
+    position: sticky;
+    top: 2rem;
+    padding: 2.5rem;
+    text-align: center;
+    height: fit-content;
+}
+
+.avatar-container {
+    width: 140px;
+    height: 140px;
+    margin: 0 auto 1.5rem;
+    position: relative;
+    padding: 5px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+}
+
+.avatar-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid var(--bg-dark);
+}
+
+.profile-header h1 {
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.5px;
+}
+
+.profile-header .title {
+    color: var(--accent-secondary);
+    font-family: var(--font-heading);
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+}
+
+.social-links a {
+    color: var(--text-muted);
+    font-size: 1.2rem;
+    margin: 0 10px;
+    transition: color 0.3s, transform 0.3s;
+    display: inline-block;
+}
+
+.social-links a:hover {
+    color: var(--text-main);
+    transform: translateY(-3px);
+}
+
+.contact-mini {
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--glass-border);
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+/* 可选：增加多行邮箱之间的间距 */
+.contact-mini p {
+    margin-bottom: 0.5rem; /* 每行邮箱之间隔开一点 */
+}
+
+/* 确保之前的样式依然生效 */
+.contact-mini a {
+    color: var(--text-muted);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contact-mini a:hover {
+    color: var(--text-main);
+}
+
+/* --- 内容区域 --- */
+.section-title {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.icon-box {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    background: rgba(255,255,255,0.05);
+    border-radius: 8px;
+    color: var(--accent-secondary);
+    font-size: 1rem;
+}
+
+.subtitle {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    font-weight: 400;
+    margin-left: auto;
+    font-family: var(--font-body);
+}
+
+.text-content {
+    color: #ccc;
+    font-size: 1.05rem;
+}
+
+/* 招聘章节的特殊光效：微弱的紫色/蓝色呼吸灯边框 */
+@keyframes border-pulse {
+    0% { border-color: rgba(112, 0, 255, 0.3); box-shadow: 0 0 15px rgba(112, 0, 255, 0.1); }
+    50% { border-color: rgba(0, 240, 255, 0.5); box-shadow: 0 0 25px rgba(0, 240, 255, 0.2); }
+    100% { border-color: rgba(112, 0, 255, 0.3); box-shadow: 0 0 15px rgba(112, 0, 255, 0.1); }
+}
+
+.hiring-glow {
+    animation: border-pulse 4s infinite ease-in-out;
+    border-width: 2px; /* 比普通卡片边框稍微粗一点 */
+}
+
+/* 招聘按钮样式 */
+.hiring-btn {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.8rem 1.5rem;
+    background: linear-gradient(135deg, var(--accent-primary), #4e00b3);
+    color: #fff;
+    font-weight: 600;
+    border-radius: 30px; /* 圆角按钮 */
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(112, 0, 255, 0.3);
+}
+
+.hiring-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(112, 0, 255, 0.5);
+    background: linear-gradient(135deg, #8a2be2, var(--accent-primary));
+}
+
+.hiring-btn i {
+    margin-right: 8px;
+}
+
+/* 让加粗的关键词变成霓虹蓝，并带一点微光 */
+#join-us-text strong {
+    color: var(--accent-secondary); /* #00f0ff 霓虹蓝 */
+    font-weight: 700;
+    text-shadow: 0 0 10px rgba(0, 240, 255, 0.3); /* 柔和的光晕 */
+    letter-spacing: 0.5px;
+}
+
+/* 稍微增加该段落的行高和字号，让它读起来更像是一份邀请函 */
+#join-us-text p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #e0e0e0; /* 比普通正文稍微亮一点 */
+}
+
+/* 强制招聘按钮内的文字为白色，去除霓虹光晕 */
+#join-us-text .hiring-btn,
+#join-us-text .hiring-btn strong,
+#join-us-text .hiring-btn i {
+    color: #ffffff !important;  /* 强制白色 */
+    text-shadow: none !important; /* 去除霓虹光晕 */
+}
+
+/* --- News Timeline --- */
+.timeline-item {
+    display: flex;
+    gap: 1.5rem;
+    padding: 1rem 0;
+    border-bottom: 1px solid rgba(255,255,255,0.03);
+}
+
+.timeline-item:last-child { border-bottom: none; }
+
+.news-date {
+    font-family: var(--font-heading);
+    color: var(--accent-secondary);
+    font-size: 0.85rem;
+    min-width: 80px;
+    padding-top: 3px;
+}
+
+.news-content {
+    font-size: 0.95rem;
+}
+
+/* --- Experience --- */
+.job-item {
+    margin-bottom: 1.5rem;
+}
+.job-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.3rem;
+}
+.job-role { font-weight: 600; color: #fff; }
+.job-year { color: var(--text-muted); font-size: 0.9rem; }
+.job-company { color: var(--accent-primary); font-size: 0.95rem; }
+
+/* --- Papers (Bibtex Render) --- */
+.filter-bar {
+    margin-bottom: 1.5rem;
+}
+.filter-bar button {
+    background: transparent;
+    border: 1px solid var(--glass-border);
+    color: var(--text-muted);
+    padding: 5px 15px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 0.85rem;
+}
+.filter-bar button.active {
+    background: var(--accent-primary);
+    color: white;
+    border-color: var(--accent-primary);
+}
+
+.paper-item {
+    position: relative;
+    padding: 1.2rem;
+    background: var(--card-hover);
+    border-radius: 12px;
+    margin-bottom: 1rem;
+    border-left: 3px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.paper-item:hover {
+    background: rgba(255,255,255,0.08);
+    border-left-color: var(--accent-secondary);
+    transform: translateX(5px);
+}
+
+/* 稍微调整一下标题，确保和年份搭配更和谐 */
+.paper-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 0.5rem;
+    line-height: 1.5;
+    /* 移除之前的 padding-right，因为现在是自动环绕了 */
+    padding-right: 0; 
+}
+
+.paper-authors {
+    font-size: 0.9rem;
+    color: #bbb;
+    margin-bottom: 0.4rem;
+}
+
+/* Highlight user name */
+.me {
+    color: var(--accent-secondary);
+    font-weight: 600;
+}
+
+.paper-venue {
+    font-family: var(--font-serif);
+    font-size: 0.85rem;
+    color: var(--accent-primary);
+    font-style: italic;
+}
+
+
+/* 新的年份样式：右浮动艺术字，文字会自动环绕，不再重叠 */
+.paper-year {
+    float: right;                /* 让年份浮动到右边 */
+    font-family: var(--font-heading);
+    font-size: 2.5rem;           /* 字体放大，更有冲击力 */
+    font-weight: 700;
+    color: var(--accent-secondary); /* 使用霓虹蓝 */
+    opacity: 0.15;               /* 降低不透明度，不抢视觉重心 */
+    line-height: 1;              /* 紧凑行高 */
+    margin-left: 1rem;           /* 左边留出空隙 */
+    margin-bottom: 0.5rem;       /* 下边留出空隙 */
+    position: static;            /* !!! 重要：取消 absolute 定位 */
+    pointer-events: none;        /* 鼠标穿透，不影响点击 */
+}
+
+/* --- 新增交互样式 --- */
+
+/* 当卡片可以点击时，鼠标变为小手，并且边框发光更明显 */
+.paper-item.clickable-paper {
+    cursor: pointer;
+}
+
+.paper-item.clickable-paper:hover {
+    border-left-color: var(--accent-secondary); /* 霓虹蓝 */
+    box-shadow: 0 5px 20px rgba(0, 240, 255, 0.1);
+}
+
+/* --- 新增：独立的 Role 标签样式 --- */
+
+.paper-role-container {
+    margin-bottom: 0.6rem; /* 与下方作者名的间距 */
+    display: flex;
+    align-items: center;
+}
+
+.role-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase; /* 全大写看起来更像标签 */
+    letter-spacing: 0.5px;
+    
+    /* 胶囊背景：深紫色背景，带一点透明度 */
+    background: rgba(112, 0, 255, 0.15);
+    color: #d8ccff; /* 浅紫色文字 */
+    border: 1px solid rgba(112, 0, 255, 0.3); /* 细微描边 */
+    
+    padding: 4px 10px;
+    border-radius: 12px; /* 圆角胶囊 */
+    
+    /* 增加一点发光感 */
+    box-shadow: 0 2px 10px rgba(112, 0, 255, 0.05);
+    transition: all 0.3s ease;
+}
+
+/* 悬停卡片时，标签稍微亮一点 */
+.paper-item:hover .role-badge {
+    background: rgba(112, 0, 255, 0.25);
+    border-color: rgba(112, 0, 255, 0.5);
+    color: #fff;
+}
+
+.role-badge i {
+    font-size: 0.7rem;
+    opacity: 0.7;
+}
+
+/* 链接小图标样式 */
+.link-icon {
+    font-size: 0.8rem;
+    margin-left: 8px;
+    color: var(--accent-secondary);
+    opacity: 0.7;
+    transition: opacity 0.3s;
+    vertical-align: middle;
+}
+
+.paper-item:hover .link-icon {
+    opacity: 1;
+}
+
+/* --- Footer --- */
+.footer {
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 0.8rem;
+    padding: 1rem;
+}

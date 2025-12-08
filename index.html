@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frank Jiang | AI Researcher</title>
+    <!-- 引入谷歌字体 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Inter:wght@300;400;600&family=Space+Grotesk:wght@300;500;700&display=swap"
+        rel="stylesheet">
+    <!-- 图标库 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- 动态背景层 -->
+    <div class="ambient-light one"></div>
+    <div class="ambient-light two"></div>
+    <div class="grid-overlay"></div>
+
+    <div class="main-container">
+        <!-- 侧边导航/个人信息栏 -->
+        <aside class="profile-card glass">
+            <div class="profile-header">
+                <div class="avatar-container">
+                    <!-- 请替换为你的真实照片文件，例如 avatar.jpg -->
+                    <img src="images/frankjiang.png" width="256" alt="Frank Jiang" id="avatar-img">
+                </div>
+                <h1 id="name">Loading...</h1>
+                <p class="title" id="role">Loading...</p>
+
+                <div class="social-links" id="social-links">
+                    <!-- JS将在此插入链接 -->
+                </div>
+            </div>
+
+            <div class="contact-mini" id="email-container">
+                <!-- JS 会自动在这里生成一个或多个邮箱行 -->
+            </div>
+        </aside>
+
+        <!-- 主要内容区域 -->
+        <main class="content-area">
+
+            <!-- 关于我 -->
+            <section id="bio-section" class="glass-panel fade-in">
+                <h2 class="section-title"><span class="icon-box"><i class="fas fa-user-astronaut"></i></span> Biography
+                </h2>
+                <div id="bio-text" class="text-content"></div>
+            </section>
+
+            <!-- 招聘 / 加入我们 -->
+            <section id="join-us-section" class="glass-panel fade-in hiring-glow">
+                <h2 class="section-title">
+                    <span class="icon-box"><i class="fas fa-rocket"></i></span>
+                    Join Us
+                </h2>
+                <div id="join-us-text" class="text-content">
+                    <!-- JS将在此插入内容 -->
+                </div>
+            </section>
+
+            <!-- 近期新闻 -->
+            <section id="news-section" class="glass-panel fade-in">
+                <h2 class="section-title"><span class="icon-box"><i class="fas fa-bolt"></i></span> Recent News</h2>
+                <div class="timeline" id="news-list">
+                    <!-- JS动态生成 -->
+                </div>
+            </section>
+
+            <!-- 职业履历 -->
+            <section id="experience-section" class="glass-panel fade-in">
+                <h2 class="section-title"><span class="icon-box"><i class="fas fa-briefcase"></i></span> Experience</h2>
+                <div class="experience-list" id="experience-list">
+                    <!-- JS动态生成 -->
+                </div>
+            </section>
+
+            <!-- 论文发表 (自动解析 BibTex) -->
+            <section id="publications-section" class="glass-panel fade-in">
+                <h2 class="section-title">
+                    <span class="icon-box"><i class="fas fa-scroll"></i></span> Selected Publications
+                    <span class="subtitle">Auto-generated from BibTex</span>
+                </h2>
+                <!-- 排序功能，暂不需要 -->
+                <!-- 
+                <div class="filter-bar">
+                    <span class="filter-label">Sort by:</span>
+                    <button class="active" onclick="renderPublications('year')">Year</button>
+                </div>
+                 -->
+                <div id="paper-list" class="paper-list">
+                    <!-- JS将解析 BibTex 并渲染到这里 -->
+                </div>
+            </section>
+
+            <footer class="glass-panel footer">
+                <p>&copy; 2025 Frank Jiang. Designed with AI Creativity.</p>
+            </footer>
+        </main>
+    </div>
+
+    <!-- 数据文件 -->
+    <script src="data.js"></script>
+    <!-- 逻辑文件 -->
+    <script src="script.js"></script>
+</body>
+
+</html>
