@@ -104,6 +104,12 @@ function loadProfile() {
             `;
         });
     }
+
+    // --- 渲染访问统计地图 ---
+    const mapContainer = document.getElementById('visitor-map');
+    if (profileData.mapWidget) {
+        mapContainer.innerHTML = profileData.mapWidget;
+    }
 }
 
 // 2. BibTex 解析与渲染

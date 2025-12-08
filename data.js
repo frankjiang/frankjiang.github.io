@@ -64,6 +64,12 @@ const profileData = {
     }
   ],
 
+  mapWidget: `
+        <a href="https://mapmyvisitors.com/web/1c15f" title="Visit tracker" target="_blank">
+            <img src="https://mapmyvisitors.com/map.png?d=ZQhG5JCKiJSeeuN9mZIfRQMRmDAweJaIPu59M4RlBa8&cl=ffffff" style="max-width: 100%; opacity: 0.8; border-radius: 8px;" />
+        </a>
+    `,
+
   // 下面粘贴你的 BibTex。
   // 注意：请使用反引号 ` 包裹整个 BibTex 字符串。
   bibtex: `
