@@ -39,6 +39,8 @@ const profileData = {
     `,
   // 近期新闻
   news: [
+    { date: "Jan 2026", content: "We released the training and inference code and model weights of FantasyVLN." },
+    { date: "Dec 2025", content: "FantasyWorld ranked 1st on the WorldScore Leaderboard (by Stanford Prof. Fei-Fei Li's Team), validating our approach against global state-of-the-art models." },
     { date: "Nov 2025", content: "FantasyTalking2 and FantasyHSI are accepted by AAAI 2026." },
     { date: "Aug 2025", content: "We release the inference code and model weights of FantasyPortrait." },
     { date: "Jul 2025", content: "FantasyTalking is accepted by ACM MM 2025." },
