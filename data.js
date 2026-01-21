@@ -19,7 +19,7 @@ const profileData = {
         I specialize in video generation, 3D world modeling, and controllable content synthesis.
         <br><br>
         Currently, I am focused on building large-scale multimodal systems that bridge the gap between human 
-        imagination and digital realization ("<a href="https://github.com/Fantasy-AMAP/" target="_blank">Fantasy AIGC Family</a>").
+        imagination and digital realization ("<a href="https://fantasy-amap.github.io/" target="_blank">Fantasy AIGC Family</a>").
     `,
   hiring: `
         <p>
