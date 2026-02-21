@@ -39,6 +39,7 @@ const profileData = {
     `,
   // 近期新闻
   news: [
+    { date: "Jan 2026", content: "FantasyVLN is accepted by CVPR 2026. We released the inference code and model weights of FantasyWorld." },
     { date: "Jan 2026", content: "FantasyWorld is accepted by ICLR 2026. We released the training and inference code and model weights of FantasyVLN." },
     { date: "Dec 2025", content: "FantasyWorld ranked 1st on the WorldScore Leaderboard (by Stanford Prof. Fei-Fei Li's Team), validating our approach against global state-of-the-art models." },
     { date: "Nov 2025", content: "FantasyTalking2 and FantasyHSI are accepted by AAAI 2026." },
@@ -76,14 +77,24 @@ const profileData = {
   // 注意：请使用反引号 ` 包裹整个 BibTex 字符串。
   bibtex: `
 
-@article{dai2025fantasyworld,
-  title={FantasyWorld: Geometry-Consistent World Modeling via Unified Video and 3D Prediction},
-  author={Dai, Yixiang and Jiang, Fan and Wang, Chiyu and Xu, Mu and Qi, Yonggang},
-  journal={ICLR 2026},
-  year={2026},
-  role={Project Leader; Corresponding Author; Co-First Author},
-  url={https://fantasy-amap.github.io/fantasy-world/},
-  github={Fantasy-AMAP/fantasy-world}
+@inproceedings{zuo2026fantasyvln,
+    title={FantasyVLN: Unified Multimodal Chain-of-Thought Reasoning for Vision-Language Navigation},
+    author={Zuo, Jing and Mu, Lingzhou and Jiang, Fan and Ma, Chengcheng and Xu, Mu and Qi, Yonggang},
+    booktitle={CVPR 2026},
+    year={2026},
+    role={Project Leader; Corresponding Author; Co-First Author},
+    url={https://fantasy-amap.github.io/fantasy-vln/},
+    github={Fantasy-AMAP/fantasy-vln}
+}
+
+@inproceedings{dai2025fantasyworld,
+    title={FantasyWorld: Geometry-Consistent World Modeling via Unified Video and 3D Prediction},
+    author={Dai, Yixiang and Jiang, Fan and Wang, Chiyu and Xu, Mu and Qi, Yonggang},
+    booktitle={ICLR 2026},
+    year={2026},
+    role={Project Leader; Corresponding Author; Co-First Author},
+    url={https://fantasy-amap.github.io/fantasy-world/},
+    github={Fantasy-AMAP/fantasy-world}
 }
 
 @inproceedings{wang2025fantasytalking,
