@@ -1,7 +1,7 @@
 const profileData = {
   // 基础信息
   name: "Frank Jiang",
-  role: "AI Researcher, Team Leader<br>Fantasy AIGC Team<br>AMAP, Alibaba",
+  role: "AI Researcher, Team Lead<br>Fantasy AIGC Team<br>ABot-World Team<br>AMAP, Alibaba",
   affiliation: "AMAP, Alibaba",
   emails: [
     "jiangfan0576@gmail.com",
@@ -14,12 +14,12 @@ const profileData = {
 
   // 关于我 (支持 HTML 标签)
   bio: `
-        I am an AI researcher dedicated to the intersection of <strong>Artificial Intelligence and Creativity</strong>. 
-        My work explores how generative models can surpass mere imitation to achieve genuine artistic expression. 
-        I specialize in video generation, 3D world modeling, and controllable content synthesis.
+        I am an AI researcher working at the frontier of <strong>generative AI, creativity, and world modeling</strong>.  
+        My research explores how AI can move beyond imitating existing data to understand, simulate, and create rich, interactive worlds.
+        I specialize in video generation, 3D/4D world modeling, controllable content synthesis, and large-scale multimodal learning.
         <br><br>
-        Currently, I am focused on building large-scale multimodal systems that bridge the gap between human 
-        imagination and digital realization ("<a href="https://fantasy-amap.github.io/" target="_blank">Fantasy AIGC Family</a>").
+        Currently, I lead research on <strong>general-purpose world models</strong>—building systems that connect human imagination with high-fidelity digital experiences as part of the
+        <a href="https://fantasy-amap.github.io/" target="_blank">Fantasy AIGC Family</a>.
     `,
   hiring: `
         <p>
@@ -39,8 +39,8 @@ const profileData = {
     `,
   // 近期新闻
   news: [
-    { date: "Jan 2026", content: "FantasyVLN is accepted by CVPR 2026. We released the inference code and model weights of FantasyWorld." },
-    { date: "Jan 2026", content: "FantasyWorld is accepted by ICLR 2026. We released the training and inference code and model weights of FantasyVLN." },
+    { date: "Jul 2026", content: "We release ABot-World-0, a real-time interactive world simulator brings infinite world rollout on single desktop GPU." },
+    { date: "Jan 2026", content: "FantasyWorld is accepted by ICLR 2026. FantasyVLN is accepted by CVPR 2026. We released the code and model." },
     { date: "Dec 2025", content: "FantasyWorld ranked 1st on the WorldScore Leaderboard (by Stanford Prof. Fei-Fei Li's Team), validating our approach against global state-of-the-art models." },
     { date: "Nov 2025", content: "FantasyTalking2 and FantasyHSI are accepted by AAAI 2026." },
     { date: "Aug 2025", content: "We release the inference code and model weights of FantasyPortrait." },
