@@ -77,6 +77,17 @@ const profileData = {
   // 注意：请使用反引号 ` 包裹整个 BibTex 字符串。
   bibtex: `
 
+
+@article{jiang2026abotworld0infiniteinteractiveworld,
+      title={ABot-World-0: Infinite Interactive World Rollout on a Single Desktop GPU}, 
+      author={ABot-World Team},
+      journal={Technical Report},
+      role={Project Leader},
+      year={2026},
+      github={amap-cvlab/ABot-World},
+      url={https://abot-world.amap.com/}, 
+}
+
 @inproceedings{zuo2026fantasyvln,
     title={FantasyVLN: Unified Multimodal Chain-of-Thought Reasoning for Vision-Language Navigation},
     author={Zuo, Jing and Mu, Lingzhou and Jiang, Fan and Ma, Chengcheng and Xu, Mu and Qi, Yonggang},
